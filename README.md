@@ -1,3 +1,34 @@
+## 📊 Power BI Dashboard
+
+An interactive Power BI dashboard was created to analyze customer shopping behavior and identify important patterns across customers, products, categories, age groups, and subscriptions.
+
+### Dashboard Highlights
+
+- 💰 Average Purchase Amount
+- 👥 Customer Count
+- ⭐ Average Review Rating
+- 📦 Revenue by Category
+- 👤 Revenue by Age Group
+- 🔄 Subscription Analysis
+- 🎯 Interactive Filters
+
+### Dashboard Preview
+
+<p align="center">
+  <img src="images/customer_behavior_dashboard.png" alt="Customer Behavior Power BI Dashboard" width="900"/>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
 # 👩🏻‍💻 Customer Behavior Data Analysis
 
 An end-to-end **Data Analytics project** that analyzes customer shopping behavior using Python, PostgreSQL, SQL, and Power BI.
