@@ -1,79 +1,42 @@
-## 📊 Power BI Dashboard
+# Customer Behavior Analysis
 
-An interactive Power BI dashboard was created to analyze customer shopping behavior and identify important patterns across customers, products, categories, age groups, and subscriptions.
+An end-to-end **Data Analytics project** focused on analyzing customer shopping behavior and identifying meaningful patterns in purchasing, spending, product preferences, discounts, subscriptions, and customer segments.
 
-### Dashboard Highlights
-
-- 💰 Average Purchase Amount
-- 👥 Customer Count
-- ⭐ Average Review Rating
-- 📦 Revenue by Category
-- 👤 Revenue by Age Group
-- 🔄 Subscription Analysis
-- 🎯 Interactive Filters
-
-### Dashboard Preview
-
-<p align="center">
-  <img src="C:\Users\prati\OneDrive\Pictures\Screenshots\Screenshot 2026-09-05 185425.png" alt="Customer Behavior Power BI Dashboard" width="900"/>
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-# 👩🏻‍💻 Customer Behavior Data Analysis
-
-An end-to-end **Data Analytics project** that analyzes customer shopping behavior using Python, PostgreSQL, SQL, and Power BI.
-
-The project focuses on understanding customer spending patterns, product preferences, discounts, subscriptions, shipping methods, customer segments, and age-group behavior.
+The project uses **Python, PostgreSQL, SQL, and Power BI** to transform raw customer data into actionable business insights.
 
 ---
 
 ## 📌 Project Overview
 
-The objective of this project is to transform raw customer shopping data into meaningful insights through data cleaning, analysis, SQL queries, and interactive visualization.
+The objective of this project is to understand customer purchasing behavior and answer key business questions using data analysis and visualization.
 
-The complete workflow includes:
+The project covers the complete analytics workflow:
 
-- 🐍 Data analysis and preprocessing using Python
-- 🧹 Handling missing and inconsistent data
-- ⚙️ Feature engineering
-- 🗄️ Loading cleaned data into PostgreSQL
-- 🔎 Business analysis using SQL queries
-- 📊 Interactive dashboard development using Power BI
+**Data Collection → Data Cleaning → Feature Engineering → SQL Analysis → Data Visualization → Business Insights**
 
 ---
 
-## 🎯 Business Objective
+## 🎯 Business Objectives
 
-The analysis aims to answer important business questions such as:
+The analysis focuses on:
 
-- How does revenue differ between male and female customers?
-- Which customers spend more even after using discounts?
-- Which products receive the highest ratings?
-- Does shipping type affect average purchase amount?
-- Do subscribers spend more than non-subscribers?
-- Which products have the highest discount usage?
-- How can customers be segmented based on previous purchases?
-- Which products are most purchased within each category?
-- Are repeat buyers more likely to subscribe?
-- Which age groups contribute the most revenue?
+- Understanding customer purchasing patterns
+- Analyzing revenue across different customer groups
+- Identifying high-performing products and categories
+- Comparing subscriber and non-subscriber behavior
+- Evaluating discount and promotional usage
+- Understanding customer segments based on purchase history
+- Analyzing purchasing behavior across age groups
+- Studying the relationship between shipping methods and spending
+- Identifying patterns among repeat customers
 
 ---
 
 ## 📂 Dataset
 
-The dataset contains **3,900 customer shopping records** with **18 original columns**.
+The project uses a customer shopping behavior dataset containing **3,900 customer purchase records** and information across multiple attributes.
 
-### Main Information Available
+### Key Attributes
 
 - Customer ID
 - Age
@@ -96,21 +59,162 @@ The dataset contains **3,900 customer shopping records** with **18 original colu
 
 ---
 
-## 🔄 Project Workflow
+## 🐍 Data Analysis & Preparation
+
+Python and Pandas were used for data exploration, cleaning, and transformation.
+
+### Data Cleaning
+
+The following steps were performed:
+
+- Examined dataset structure and data types
+- Identified missing values
+- Handled missing review ratings using category-wise median values
+- Standardized column names using `snake_case`
+- Renamed `purchase_amount_(usd)` to `purchase_amount`
+- Checked consistency between discount and promotional fields
+- Removed redundant data where required
+
+### Feature Engineering
+
+New analytical features were created to improve the analysis.
+
+#### Age Group
+
+Customers were categorized into:
+
+- Young Adult
+- Adult
+- Middle-aged
+- Senior
+
+#### Purchase Frequency Days
+
+Purchase frequency was converted into numerical values for analysis.
+
+Examples:
+
+- Weekly → 7 days
+- Fortnightly → 14 days
+- Bi-Weekly → 14 days
+- Monthly → 30 days
+- Quarterly → 90 days
+- Every 3 Months → 90 days
+- Annually → 365 days
+
+---
+
+## 🗄️ PostgreSQL Database
+
+The cleaned dataset was integrated with PostgreSQL for structured data storage and SQL-based analysis.
+
+**Database:** `customer_behavior`  
+**Table:** `customer`
+
+Python was used to connect the processed dataset with PostgreSQL using **SQLAlchemy**.
+
+---
+
+## 🔎 SQL Business Analysis
+
+SQL was used to answer business-oriented questions and extract meaningful insights from the customer data.
+
+### Analysis Performed
+
+1. Revenue generated by gender
+2. Customers using discounts with above-average purchase amounts
+3. Top products based on average review rating
+4. Average purchase amount by shipping type
+5. Subscriber vs. non-subscriber spending and revenue
+6. Products with the highest discount rate
+7. Customer segmentation based on previous purchases
+8. Top products within each category
+9. Subscription behavior of repeat buyers
+10. Revenue contribution by age group
+
+### SQL Concepts Used
+
+- Filtering
+- Aggregations
+- `GROUP BY`
+- `ORDER BY`
+- Subqueries
+- `CASE`
+- Common Table Expressions (CTEs)
+- Window Functions
+- `ROW_NUMBER()`
+- Customer Segmentation
+
+---
+
+## 📊 Power BI Dashboard
+
+An interactive Power BI dashboard was developed to provide a visual overview of customer behavior and purchasing patterns.
+
+### Key Performance Indicators
+
+- **Number of Customers**
+- **Average Purchase Amount**
+- **Average Review Rating**
+
+### Dashboard Filters
+
+- Subscription Status
+- Gender
+- Category
+- Shipping Type
+
+### Visual Analysis
+
+- Revenue by Category
+- Sales by Category
+- Revenue by Age Group
+- Sales by Age Group
+- Customer and Subscription Analysis
+
+The dashboard allows users to interact with the data and explore customer behavior from different perspectives.
+
+---
+
+## 💡 Business Insights
+
+The analysis helps identify:
+
+- Differences in purchasing behavior across customer groups
+- High-performing products and categories
+- Spending patterns of subscribers and non-subscribers
+- The impact of discounts on customer purchases
+- Characteristics of repeat and loyal customers
+- Revenue contribution from different age groups
+- Purchasing patterns based on shipping preferences
+
+These insights can support better decisions related to **customer engagement, product strategy, promotions, and revenue growth**.
+
+---
+
+## 🛠️ Tools & Technologies
+
+| Technology | Purpose |
+|---|---|
+| Python | Data analysis and preprocessing |
+| Pandas | Data cleaning and transformation |
+| PostgreSQL | Data storage |
+| SQL | Business analysis |
+| Power BI | Data visualization and dashboard |
+| Jupyter Notebook | Analysis workflow |
+| GitHub | Project documentation and version control |
+
+---
+
+## 📁 Project Structure
 
 ```text
-Raw Customer Dataset
-        ↓
-Data Exploration
-        ↓
-Data Cleaning
-        ↓
-Feature Engineering
-        ↓
-PostgreSQL Database
-        ↓
-SQL Business Analysis
-        ↓
-Power BI Dashboard
-        ↓
-Business Insights
+customer_behavior_analysis/
+│
+├── customer_shopping_behavior.csv
+├── Customer_Shopping_Behavior_Analysis.ipynb
+├── customer_behavior_dashboard.pbix
+├── customer_behavior_sql_queries.sql
+├── Business Problem Document.pdf
+├── LICENSE
+└── README.md
