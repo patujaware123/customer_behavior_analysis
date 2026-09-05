@@ -1,86 +1,66 @@
-# 📊 Customer Behavior Analysis
-
-An end-to-end **Data Analytics project** that analyzes customer shopping behavior using **Python, PostgreSQL, SQL, and Power BI**.
-
-The project focuses on understanding customer spending patterns, product performance, discounts, subscriptions, shipping methods, purchase frequency, and customer segments.
-
----
+# Customer Behavior Analysis
 
 ## 📌 Project Overview
 
-The objective of this project is to transform raw customer shopping data into meaningful business insights using data cleaning, exploratory analysis, SQL, and interactive visualization.
+Customer Behavior Analysis is an end-to-end data analytics project focused on understanding customer shopping patterns and purchasing behavior.
 
-The project follows a complete data analytics workflow:
-
-**Data Exploration → Data Cleaning → Feature Engineering → PostgreSQL → SQL Analysis → Power BI → Business Insights**
+The project analyzes customer demographics, products, purchase amounts, ratings, discounts, subscriptions, shipping methods, previous purchases, and purchase frequency to identify meaningful business patterns.
 
 ---
 
-## 🎯 Business Objectives
+## 🎯 Business Problem
 
-The analysis aims to answer important business questions related to:
+The objective of the project is to analyze customer shopping data and understand:
 
 - Customer purchasing behavior
-- Revenue and spending patterns
+- Spending and revenue patterns
 - Product and category performance
-- Subscriber vs. non-subscriber behavior
-- Discount and promotional usage
-- Customer segmentation
-- Repeat purchase behavior
-- Age-group purchasing patterns
-- Shipping preferences and spending
-- Revenue contribution across customer groups
+- Discount and promotional behavior
+- Subscription patterns
+- Repeat and loyal customer behavior
+- Purchasing behavior across different age groups
+- Shipping preferences and their relationship with spending
 
 ---
 
 ## 📂 Dataset
 
-The dataset contains **3,900 customer purchase records** with information related to customer demographics, products, purchases, discounts, subscriptions, shipping, ratings, and purchase frequency.
+The dataset contains **3,900 customer purchase records** with **18 columns**.
 
-### Key Columns
+The dataset includes information about:
 
-- Customer ID
-- Age
-- Gender
-- Item Purchased
-- Category
-- Purchase Amount
-- Location
-- Size
-- Color
-- Season
-- Review Rating
-- Subscription Status
-- Shipping Type
-- Discount Applied
-- Promo Code Used
-- Previous Purchases
-- Payment Method
-- Frequency of Purchases
+- Customer demographics
+- Products and categories
+- Purchase amounts
+- Customer ratings
+- Discounts and promotions
+- Subscription status
+- Shipping methods
+- Previous purchases
+- Payment methods
+- Purchase frequency
 
 ---
 
-## 🐍 Data Analysis Using Python
+## 🐍 Python Data Analysis
 
-Python and Pandas were used for data exploration, cleaning, and transformation.
+Python and Pandas were used to clean, transform, and prepare the data for further analysis.
 
 ### Data Cleaning
 
-The following steps were performed:
-
-- Checked dataset structure and data types
+- Checked the dataset structure and data types
 - Identified missing values
-- Handled missing review ratings using category-wise median
-- Standardized column names using `snake_case`
-- Renamed `purchase_amount_(usd)` to `purchase_amount`
+- Handled missing review ratings using category-wise median values
+- Standardized column names
+- Renamed the purchase amount column
 - Checked consistency between discount and promotional fields
-- Removed redundant information where required
+- Removed redundant data where required
 
 ### Feature Engineering
 
-Additional features were created to improve the analysis.
+Two important features were created:
 
-#### Age Group
+**Age Group**
 
 Customers were categorized into:
 
@@ -89,83 +69,71 @@ Customers were categorized into:
 - Middle-aged
 - Senior
 
-#### Purchase Frequency Days
+**Purchase Frequency Days**
 
-Purchase frequency was converted into numerical days.
-
-| Frequency | Days |
-|---|---:|
-| Weekly | 7 |
-| Fortnightly | 14 |
-| Bi-Weekly | 14 |
-| Monthly | 30 |
-| Quarterly | 90 |
-| Every 3 Months | 90 |
-| Annually | 365 |
+Purchase frequency was converted into numerical days to support analysis.
 
 ---
 
-## 🗄️ PostgreSQL Integration
+## 🗄️ PostgreSQL Analysis
 
-The cleaned and transformed dataset was loaded into PostgreSQL for structured storage and SQL-based analysis.
+The cleaned dataset was loaded into a PostgreSQL database for structured storage and SQL analysis.
 
 **Database:** `customer_behavior`  
 **Table:** `customer`
 
-Python was connected to PostgreSQL using **SQLAlchemy**.
+Python was used to connect the dataset with PostgreSQL using SQLAlchemy.
 
 ---
 
 ## 🔎 SQL Business Analysis
 
-SQL was used to analyze customer behavior and answer important business questions.
+SQL was used to analyze customer behavior and answer business-related questions.
 
-### Analysis Performed
+The analysis includes:
 
-1. Revenue generated by male and female customers
-2. Customers who used discounts and spent above the average purchase amount
-3. Top 5 products based on average review rating
-4. Average purchase amount for Standard and Express shipping
-5. Subscriber vs. non-subscriber customer count, spending, and revenue
-6. Top 5 products based on discount rate
-7. Customer segmentation based on previous purchases
-8. Top 3 products within each category
-9. Subscription behavior of repeat buyers
-10. Revenue contribution by age group
+- Revenue by gender
+- Above-average spending among discounted purchases
+- Top products based on review ratings
+- Average purchase amount by shipping type
+- Subscriber vs. non-subscriber spending and revenue
+- Products with the highest discount rates
+- Customer segmentation based on previous purchases
+- Top products within each category
+- Subscription behavior of repeat buyers
+- Revenue contribution by age group
 
-### SQL Concepts Used
+SQL techniques used include:
 
-- Filtering
-- Aggregations
+- Aggregate Functions
 - `GROUP BY`
 - `ORDER BY`
-- Subqueries
 - `CASE`
-- Common Table Expressions (CTEs)
+- Subqueries
+- CTEs
 - Window Functions
 - `ROW_NUMBER()`
-- Customer Segmentation
 
 ---
 
 ## 📊 Power BI Dashboard
 
-An interactive Power BI dashboard was developed to visualize customer behavior and purchasing patterns.
+An interactive Power BI dashboard was developed to visualize customer shopping behavior.
 
-### Key Performance Indicators
+### KPIs
 
-- **Number of Customers**
-- **Average Purchase Amount**
-- **Average Review Rating**
+- Number of Customers
+- Average Purchase Amount
+- Average Review Rating
 
-### Dashboard Filters
+### Filters
 
 - Subscription Status
 - Gender
 - Category
 - Shipping Type
 
-### Key Visualizations
+### Visualizations
 
 - Revenue by Category
 - Sales by Category
@@ -173,49 +141,21 @@ An interactive Power BI dashboard was developed to visualize customer behavior a
 - Sales by Age Group
 - Customer and Subscription Analysis
 
-The dashboard provides an interactive way to explore customer behavior across different dimensions.
+---
+
+## 💡 Project Outcome
+
+The project transforms raw customer shopping data into structured analysis and interactive visualizations.
+
+The analysis provides insights into customer spending, product performance, discounts, subscriptions, customer segments, purchase behavior, and revenue contribution across different customer groups.
 
 ---
 
-## 💡 Business Insights
+## 🛠️ Technologies Used
 
-The analysis helps identify:
-
-- Customer spending patterns
-- High-performing products and categories
-- Differences between subscribers and non-subscribers
-- Discount usage patterns
-- Repeat and loyal customer behavior
-- Revenue contribution by age group
-- Purchasing patterns across shipping methods
-
-These insights can support data-driven decisions related to **customer engagement, product strategy, promotions, and revenue growth**.
-
----
-
-## 🛠️ Tools & Technologies
-
-| Technology | Purpose |
-|---|---|
-| Python | Data analysis and preprocessing |
-| Pandas | Data cleaning and transformation |
-| PostgreSQL | Database storage |
-| SQL | Business analysis |
-| Power BI | Data visualization and dashboard |
-| Jupyter Notebook | Analysis workflow |
-| GitHub | Project documentation |
-
----
-
-## 📁 Project Structure
-
-```text
-customer_behavior_analysis/
-│
-├── Business Problem Statement.pdf
-├── Customer Shopping Behaviours Analysis.pdf
-├── customer_behavior_dashboard.pbix
-├── customer_behavior_sql_queries.sql
-├── customer_shopping_behavior.csv
-├── customer_shopping_behavior_analysis.ipynb
-└── README.md
+- **Python**
+- **Pandas**
+- **PostgreSQL**
+- **SQL**
+- **Power BI**
+- **Jupyter Notebook**
