@@ -15,7 +15,7 @@ An interactive Power BI dashboard was created to analyze customer shopping behav
 ### Dashboard Preview
 
 <p align="center">
-  <img src="images/customer_behavior_dashboard.png" alt="Customer Behavior Power BI Dashboard" width="900"/>
+  <img src="C:\Users\prati\OneDrive\Pictures\Screenshots\Screenshot 2026-09-05 185425.png" alt="Customer Behavior Power BI Dashboard" width="900"/>
 </p>
 
 
