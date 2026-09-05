@@ -1,42 +1,43 @@
-# Customer Behavior Analysis
+# 📊 Customer Behavior Analysis
 
-An end-to-end **Data Analytics project** focused on analyzing customer shopping behavior and identifying meaningful patterns in purchasing, spending, product preferences, discounts, subscriptions, and customer segments.
+An end-to-end **Data Analytics project** that analyzes customer shopping behavior using **Python, PostgreSQL, SQL, and Power BI**.
 
-The project uses **Python, PostgreSQL, SQL, and Power BI** to transform raw customer data into actionable business insights.
+The project focuses on understanding customer spending patterns, product performance, discounts, subscriptions, shipping methods, purchase frequency, and customer segments.
 
 ---
 
 ## 📌 Project Overview
 
-The objective of this project is to understand customer purchasing behavior and answer key business questions using data analysis and visualization.
+The objective of this project is to transform raw customer shopping data into meaningful business insights using data cleaning, exploratory analysis, SQL, and interactive visualization.
 
-The project covers the complete analytics workflow:
+The project follows a complete data analytics workflow:
 
-**Data Collection → Data Cleaning → Feature Engineering → SQL Analysis → Data Visualization → Business Insights**
+**Data Exploration → Data Cleaning → Feature Engineering → PostgreSQL → SQL Analysis → Power BI → Business Insights**
 
 ---
 
 ## 🎯 Business Objectives
 
-The analysis focuses on:
+The analysis aims to answer important business questions related to:
 
-- Understanding customer purchasing patterns
-- Analyzing revenue across different customer groups
-- Identifying high-performing products and categories
-- Comparing subscriber and non-subscriber behavior
-- Evaluating discount and promotional usage
-- Understanding customer segments based on purchase history
-- Analyzing purchasing behavior across age groups
-- Studying the relationship between shipping methods and spending
-- Identifying patterns among repeat customers
+- Customer purchasing behavior
+- Revenue and spending patterns
+- Product and category performance
+- Subscriber vs. non-subscriber behavior
+- Discount and promotional usage
+- Customer segmentation
+- Repeat purchase behavior
+- Age-group purchasing patterns
+- Shipping preferences and spending
+- Revenue contribution across customer groups
 
 ---
 
 ## 📂 Dataset
 
-The project uses a customer shopping behavior dataset containing **3,900 customer purchase records** and information across multiple attributes.
+The dataset contains **3,900 customer purchase records** with information related to customer demographics, products, purchases, discounts, subscriptions, shipping, ratings, and purchase frequency.
 
-### Key Attributes
+### Key Columns
 
 - Customer ID
 - Age
@@ -59,7 +60,7 @@ The project uses a customer shopping behavior dataset containing **3,900 custome
 
 ---
 
-## 🐍 Data Analysis & Preparation
+## 🐍 Data Analysis Using Python
 
 Python and Pandas were used for data exploration, cleaning, and transformation.
 
@@ -67,17 +68,17 @@ Python and Pandas were used for data exploration, cleaning, and transformation.
 
 The following steps were performed:
 
-- Examined dataset structure and data types
+- Checked dataset structure and data types
 - Identified missing values
-- Handled missing review ratings using category-wise median values
+- Handled missing review ratings using category-wise median
 - Standardized column names using `snake_case`
 - Renamed `purchase_amount_(usd)` to `purchase_amount`
 - Checked consistency between discount and promotional fields
-- Removed redundant data where required
+- Removed redundant information where required
 
 ### Feature Engineering
 
-New analytical features were created to improve the analysis.
+Additional features were created to improve the analysis.
 
 #### Age Group
 
@@ -90,45 +91,45 @@ Customers were categorized into:
 
 #### Purchase Frequency Days
 
-Purchase frequency was converted into numerical values for analysis.
+Purchase frequency was converted into numerical days.
 
-Examples:
-
-- Weekly → 7 days
-- Fortnightly → 14 days
-- Bi-Weekly → 14 days
-- Monthly → 30 days
-- Quarterly → 90 days
-- Every 3 Months → 90 days
-- Annually → 365 days
+| Frequency | Days |
+|---|---:|
+| Weekly | 7 |
+| Fortnightly | 14 |
+| Bi-Weekly | 14 |
+| Monthly | 30 |
+| Quarterly | 90 |
+| Every 3 Months | 90 |
+| Annually | 365 |
 
 ---
 
-## 🗄️ PostgreSQL Database
+## 🗄️ PostgreSQL Integration
 
-The cleaned dataset was integrated with PostgreSQL for structured data storage and SQL-based analysis.
+The cleaned and transformed dataset was loaded into PostgreSQL for structured storage and SQL-based analysis.
 
 **Database:** `customer_behavior`  
 **Table:** `customer`
 
-Python was used to connect the processed dataset with PostgreSQL using **SQLAlchemy**.
+Python was connected to PostgreSQL using **SQLAlchemy**.
 
 ---
 
 ## 🔎 SQL Business Analysis
 
-SQL was used to answer business-oriented questions and extract meaningful insights from the customer data.
+SQL was used to analyze customer behavior and answer important business questions.
 
 ### Analysis Performed
 
-1. Revenue generated by gender
-2. Customers using discounts with above-average purchase amounts
-3. Top products based on average review rating
-4. Average purchase amount by shipping type
-5. Subscriber vs. non-subscriber spending and revenue
-6. Products with the highest discount rate
+1. Revenue generated by male and female customers
+2. Customers who used discounts and spent above the average purchase amount
+3. Top 5 products based on average review rating
+4. Average purchase amount for Standard and Express shipping
+5. Subscriber vs. non-subscriber customer count, spending, and revenue
+6. Top 5 products based on discount rate
 7. Customer segmentation based on previous purchases
-8. Top products within each category
+8. Top 3 products within each category
 9. Subscription behavior of repeat buyers
 10. Revenue contribution by age group
 
@@ -149,7 +150,7 @@ SQL was used to answer business-oriented questions and extract meaningful insigh
 
 ## 📊 Power BI Dashboard
 
-An interactive Power BI dashboard was developed to provide a visual overview of customer behavior and purchasing patterns.
+An interactive Power BI dashboard was developed to visualize customer behavior and purchasing patterns.
 
 ### Key Performance Indicators
 
@@ -164,7 +165,7 @@ An interactive Power BI dashboard was developed to provide a visual overview of 
 - Category
 - Shipping Type
 
-### Visual Analysis
+### Key Visualizations
 
 - Revenue by Category
 - Sales by Category
@@ -172,7 +173,7 @@ An interactive Power BI dashboard was developed to provide a visual overview of 
 - Sales by Age Group
 - Customer and Subscription Analysis
 
-The dashboard allows users to interact with the data and explore customer behavior from different perspectives.
+The dashboard provides an interactive way to explore customer behavior across different dimensions.
 
 ---
 
@@ -180,15 +181,15 @@ The dashboard allows users to interact with the data and explore customer behavi
 
 The analysis helps identify:
 
-- Differences in purchasing behavior across customer groups
+- Customer spending patterns
 - High-performing products and categories
-- Spending patterns of subscribers and non-subscribers
-- The impact of discounts on customer purchases
-- Characteristics of repeat and loyal customers
-- Revenue contribution from different age groups
-- Purchasing patterns based on shipping preferences
+- Differences between subscribers and non-subscribers
+- Discount usage patterns
+- Repeat and loyal customer behavior
+- Revenue contribution by age group
+- Purchasing patterns across shipping methods
 
-These insights can support better decisions related to **customer engagement, product strategy, promotions, and revenue growth**.
+These insights can support data-driven decisions related to **customer engagement, product strategy, promotions, and revenue growth**.
 
 ---
 
@@ -198,11 +199,11 @@ These insights can support better decisions related to **customer engagement, pr
 |---|---|
 | Python | Data analysis and preprocessing |
 | Pandas | Data cleaning and transformation |
-| PostgreSQL | Data storage |
+| PostgreSQL | Database storage |
 | SQL | Business analysis |
 | Power BI | Data visualization and dashboard |
 | Jupyter Notebook | Analysis workflow |
-| GitHub | Project documentation and version control |
+| GitHub | Project documentation |
 
 ---
 
@@ -211,10 +212,10 @@ These insights can support better decisions related to **customer engagement, pr
 ```text
 customer_behavior_analysis/
 │
-├── customer_shopping_behavior.csv
-├── Customer_Shopping_Behavior_Analysis.ipynb
+├── Business Problem Statement.pdf
+├── Customer Shopping Behaviours Analysis.pdf
 ├── customer_behavior_dashboard.pbix
 ├── customer_behavior_sql_queries.sql
-├── Business Problem Document.pdf
-├── LICENSE
+├── customer_shopping_behavior.csv
+├── customer_shopping_behavior_analysis.ipynb
 └── README.md
